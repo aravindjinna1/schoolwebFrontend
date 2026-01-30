@@ -12,7 +12,7 @@ function ContactForm() {
 
   async function fetchContacts() {
     try {
-      const response = await fetch("http://localhost:5000/api/contact");
+      const response = await fetch("https://schoolwebtask.onrender.com/api/contact");
       if (!response.ok) throw new Error("Failed to fetch data");
       const data = await response.json();
       setContacts(data);
@@ -24,7 +24,7 @@ function ContactForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch("https://schoolwebtask.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
